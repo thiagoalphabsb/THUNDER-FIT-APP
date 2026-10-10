@@ -1,0 +1,90 @@
+{
+  "$schema": "https://firebase.google.com/schemas/firestore-blueprint.json",
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "path": "users/{userId}",
+      "description": "User athlete profile, settings, and workout goals",
+      "fields": {
+        "userId": { "type": "string", "description": "Auth UID" },
+        "name": { "type": "string", "description": "Display name of user" },
+        "weightKg": { "type": "number", "description": "Body weight in kg" },
+        "weeklyGoalWorkouts": { "type": "number", "description": "Target workouts per week" },
+        "defaultRestSeconds": { "type": "number", "description": "Default rest timer in seconds" },
+        "soundEnabled": { "type": "boolean", "description": "Sound fx enabled" },
+        "vibrationEnabled": { "type": "boolean", "description": "Haptic feedback enabled" },
+        "autoStartTimer": { "type": "boolean", "description": "Auto start rest timer on set completion" },
+        "keepScreenAwake": { "type": "boolean", "description": "Keep screen active" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp" }
+      }
+    },
+    "CompletedWorkout": {
+      "collection": "workouts",
+      "path": "users/{userId}/workouts/{workoutId}",
+      "description": "Logged completed workout sessions with sets, volume, and PRs",
+      "fields": {
+        "id": { "type": "string", "description": "Workout unique ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "routineId": { "type": "string", "description": "Optional routine template ID" },
+        "routineName": { "type": "string", "description": "Name of workout" },
+        "startedAt": { "type": "string", "description": "ISO start timestamp" },
+        "completedAt": { "type": "string", "description": "ISO completion timestamp" },
+        "durationSeconds": { "type": "number", "description": "Duration in seconds" },
+        "exercises": { "type": "array", "description": "List of workout exercises and sets" },
+        "totalVolumeKg": { "type": "number", "description": "Total kg lifted" },
+        "totalSets": { "type": "number", "description": "Total completed sets count" },
+        "totalReps": { "type": "number", "description": "Total repetitions count" },
+        "personalRecords": { "type": "array", "description": "Personal records achieved" },
+        "rating": { "type": "number", "description": "RPE / satisfaction rating 1-10" },
+        "notes": { "type": "string", "description": "Optional workout notes" }
+      }
+    },
+    "Routine": {
+      "collection": "routines",
+      "path": "users/{userId}/routines/{routineId}",
+      "description": "User created or customized workout routine templates",
+      "fields": {
+        "id": { "type": "string", "description": "Routine ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "name": { "type": "string", "description": "Routine name" },
+        "description": { "type": "string", "description": "Routine description" },
+        "targetMuscles": { "type": "array", "description": "Target muscle groups" },
+        "exercises": { "type": "array", "description": "List of template exercises" },
+        "lastPerformed": { "type": "string", "description": "ISO timestamp of last execution" },
+        "createdAt": { "type": "string", "description": "ISO timestamp of creation" }
+      }
+    },
+    "CustomExercise": {
+      "collection": "exercises",
+      "path": "users/{userId}/exercises/{exerciseId}",
+      "description": "Custom exercises created by the user",
+      "fields": {
+        "id": { "type": "string", "description": "Exercise ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "name": { "type": "string", "description": "Exercise name" },
+        "muscleGroup": { "type": "string", "description": "Primary muscle group" },
+        "secondaryMuscles": { "type": "array", "description": "Secondary muscles" },
+        "equipment": { "type": "string", "description": "Equipment type" },
+        "instructions": { "type": "array", "description": "Step by step instructions" },
+        "tips": { "type": "string", "description": "Execution tip" },
+        "defaultRestSeconds": { "type": "number", "description": "Default rest seconds" },
+        "isCustom": { "type": "boolean", "description": "Flag for custom exercise" }
+      }
+    },
+    "ActiveSession": {
+      "collection": "activeSession",
+      "path": "users/{userId}/activeSession/current",
+      "description": "Live in-progress workout session synced across devices",
+      "fields": {
+        "id": { "type": "string", "description": "Active session ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "routineId": { "type": "string", "description": "Routine ID" },
+        "routineName": { "type": "string", "description": "Routine name" },
+        "startedAt": { "type": "string", "description": "Start timestamp" },
+        "exercises": { "type": "array", "description": "Current exercises and sets" },
+        "notes": { "type": "string", "description": "In-progress notes" },
+        "durationSeconds": { "type": "number", "description": "Duration so far" }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "THUNDER",
+  "description": "Aplicativo moderno de musculação, progressão de carga e acompanhamento de treinos em tempo real com estética premium dark e tiffany.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

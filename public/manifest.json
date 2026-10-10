@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "THUNDER - Musculação & Progressão de Carga",
+  "short_name": "THUNDER",
+  "description": "Aplicativo moderno de musculação, progressão de carga e cronômetro de descanso em tempo real com suporte a tela de bloqueio.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07080a",
+  "theme_color": "#00D1C1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
