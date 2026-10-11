@@ -39,6 +39,14 @@ Combinando uma interface **Offline-First** ultraveloz com a capacidade analític
 
 ---
 
+### 📱 Demonstração em Tempo Real
+
+| Dashboard & Navegação | Sessão de Treino & Temporizador |
+| :---: | :---: |
+| <img src="https://raw.githubusercontent.com/thiagoalphabsb/cybersecurity-portfolio/main/projects/evidences/01-dashboard-flow.gif" width="280" alt="Dashboard" /> | <img src="https://raw.githubusercontent.com/thiagoalphabsb/cybersecurity-portfolio/main/projects/evidences/02-workout-timer.gif" width="280" alt="Timer" /> |
+
+---
+
 ## ⚡ Funcionalidades
 
 ### 1. Execução de Treino em Tempo Real
